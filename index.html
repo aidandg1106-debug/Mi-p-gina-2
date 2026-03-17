@@ -8,18 +8,33 @@
         body {
             font-family: Arial;
             margin: 0;
-            background-color: #f4f4f4;
             text-align: center;
+
+            /* 🌌 Fondo con efecto oscuro */
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("IMG_3998.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+
+            animation: moverFondo 20s infinite linear;
+        }
+
+        /* 🌌 Animación del fondo */
+        @keyframes moverFondo {
+            0% { background-position: center; }
+            50% { background-position: top; }
+            100% { background-position: center; }
         }
 
         header {
-            background-color: #333;
+            background-color: rgba(0,0,0,0.7);
             color: white;
             padding: 20px;
         }
 
         nav {
-            background-color: #555;
+            background-color: rgba(0,0,0,0.6);
             padding: 10px;
         }
 
@@ -28,14 +43,35 @@
             margin: 10px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: yellow;
+            color: #00ffcc;
         }
 
+        /* ✨ Glass effect */
         .contenido {
             padding: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            margin: 20px;
+            backdrop-filter: blur(10px);
+
+            animation: aparecer 1.5s ease;
+        }
+
+        /* 🚀 Animación entrada */
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         img {
@@ -49,7 +85,7 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: rgba(0,0,0,0.7);
             color: white;
             padding: 10px;
             position: fixed;
@@ -62,7 +98,7 @@
 <body>
 
 <header>
-    <h1>Bienvenido a mi página</h1>
+    <h1>Bienvenido a mi página 🚀</h1>
     <p>Hecha por mí 😎</p>
 </header>
 
@@ -74,11 +110,10 @@
 
 <div class="contenido">
     <h2>Hola 👋</h2>
-    <p>Esta es mi primera página web.</p>
+    <p>Esta es mi primera página web pero ya se ve mejor 🔥</p>
 
     <h3>Mi imagen</h3>
 
-    <!-- Cambia el nombre de la imagen por el tuyo -->
     <a href="IMG_3993.jpeg" target="_blank">
         <img src="IMG_3993.jpeg" alt="Mi imagen">
     </a>
